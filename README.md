@@ -41,7 +41,7 @@ SELECT \* FROM patients WHERE age IS NOT NULL;
 
 \---
 
-### 2\. Demographic Categorization \& Conditional Logic (`CASE WHEN`)
+### 2\. Demographic Categorisation \& Conditional Logic (`CASE WHEN`)
 
 ```sql
 -- Gender breakdown of survivors
@@ -60,7 +60,7 @@ SELECT embarked, COUNT(\*)
 FROM patients 
 GROUP BY embarked;
 
--- Age group categorization (Adult vs Child)
+-- Age group categorisation (Adult vs Child)
 SELECT age,
 	CASE
 		WHEN age >= 18 THEN 'Adult'
@@ -110,7 +110,7 @@ GROUP BY survived\_status;
 ### 3\. Schema Standardisation \& Data Cleansing
 
 ```sql
--- Column renaming and schema stabilization
+-- Column renaming and schema stabilisation
 ALTER TABLE patients RENAME COLUMN passenger\_id TO passenger\_id;
 ALTER TABLE patients RENAME COLUMN survived TO survived;
 ALTER TABLE patients RENAME COLUMN class TO class;
@@ -468,7 +468,7 @@ LIMIT 15;
    * **Class 3:** 30 passengers paid above the fleet average fare. Data auditing revealed these 3 Third-Class entries represented large extended families purchasing combined group tickets.
 3. **Intra-Class Fare Rankings:**
 
-   * Utilizing `DENSE\_RANK() OVER (PARTITION BY class ORDER BY ...)`, the top ticket price across the entire ship was **$512.33**, held by 1st-Class passengers Miss Anna Ward, Mr. Thomas Drake Martinez Cardeza, and Mr. Gustave J. Lesurer.
+   * Utilising `DENSE\_RANK() OVER (PARTITION BY class ORDER BY ...)`, the top ticket price across the entire ship was **$512.33**, held by 1st-Class passengers Miss Anna Ward, Mr. Thomas Drake Martinez Cardeza, and Mr. Gustave J. Lesurer.
 4. **Shared Booking Identification via Self-JOIN:**
 
    * By executing a relational `Self-JOIN` on `p1.fare = p2.fare`, passenger pairings were mapped to identify travel companions and family units sharing group tickets.
